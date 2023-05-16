@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import styles from '../styles/Home.module.css'
+
 
 const games = [
   {
@@ -7,7 +9,7 @@ const games = [
     "playerNumber": "2-5",
     "description": "Use your character's special tallents to work together to recover the parts from your flying machine and get to the Launch Pad before the sandstrom gets you. But beware, the storm will move anything in its path! ",
     "image": "",
-    "playTime": "45 minutes",
+    "playTime": "45",
     "yearReleased": "2016",
     "difficultyLevel": "2",
     "age": "10+",
@@ -43,7 +45,7 @@ const games = [
     "playerNumber": "1-4",
     "description": "Use resources from your dice roll to build roads, knights, settlements, and cities. Get the most points and win. ",
     "image": "",
-    "playTime": "",
+    "playTime": "30",
     "yearReleased": "2018",
     "difficultyLevel": "1",
     "age": "7+",
@@ -53,8 +55,14 @@ const games = [
 
 function makeCard(game) {
   return(
-    <div>
+    <div className={styles.card}>
       <h3>{game.name}</h3>
+      <p>Ages:{game.age}</p>
+      <p>Number of Players: {game.playerNumber}</p>
+      <p>Descrption:{game.description}</p>
+      <p>Difficulty Level: {game.difficultyLevel}</p>
+      <h5>Play Time: {game.playTime} minutes</h5>
+      
     </div>
   )
 }
@@ -66,7 +74,7 @@ export default function Home() {
       <h1>Welcome to Game Night!</h1>  
       <p>What should we play tonight?</p>
       <h2>Find your Next Game to play!</h2>
-      <div>
+      <div className={styles.container}>
         {cards}
       </div>
       <Link href="/about">Check out my About Page</Link>

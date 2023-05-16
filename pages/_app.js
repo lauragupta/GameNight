@@ -1,13 +1,18 @@
 import "../styles/global.css"
 import Link from "next/link"
 import {useRouter} from "next/router"
+import Head from "next/head"
+
 
 export default function App({ Component, pageProps}) {
   const router = useRouter()
   return (
     <>
+      <Head>
+        <title>Game Night</title>
+      </Head>
       <div>
-       <h1>Game Night Tonight</h1>
+       <h1>Game Night</h1>
        <nav className="header-nav">
         <ul>
           <li>
