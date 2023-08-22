@@ -24,7 +24,7 @@ function makeCard(game) {
 
 export default function Home() {
   const [games, setGames] = useState([]);
-  useEffect(async () => {
+  useEffect(async  () => {
     const gamesData = await fetchGames()
     setGames(gamesData)
   }, []);
